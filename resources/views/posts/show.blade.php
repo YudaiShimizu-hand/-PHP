@@ -10,5 +10,22 @@
     <h1>{{$post->title}}</h1>
     <p>{{$post->body}}</p>
     <a href='{{route('posts.edit', $post)}}'>編集</a>
+    <form method="POST" action="{{route('posts.destroy', $post)}}" id="delete_post">
+        @method('DELETE')
+        @csrf
+        <button>削除</button>
+    </form>
+    <script>
+        'use strict';
+        {
+            document.getElementById('delete_post').addEventListener('submit', e => {
+                e.preventDefault();
+                if (!confirm('本当に削除しますか')) {
+                    return;
+                }
+                e.target.submit();
+            })
+        }
+    </script>
 </body>
 </html>

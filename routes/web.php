@@ -20,3 +20,4 @@ Route::post('/create', 'App\Http\Controllers\PostController@store')->name('posts
 Route::get('/{post}/show', 'App\Http\Controllers\PostController@show')->name('posts.show');
 Route::get('/{post}/edit', 'App\Http\Controllers\PostController@edit')->name('posts.edit');
 Route::patch('/{post}/edit', 'App\Http\Controllers\PostController@update')->name('posts.update');
+Route::delete('/{post}/destroy', 'App\Http\Controllers\PostController@destroy')->name('posts.destroy');
