@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="{{route('posts.create')}}">新規投稿</a>
     <h1>ハロー</h1>
     @foreach($posts as $post)
         <a href='{{route('posts.show', $post)}}'>{{$post->title}}</a>

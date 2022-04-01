@@ -31,4 +31,14 @@ class PostController extends Controller
         return redirect()
             ->route('posts.index');
     }
+    public function edit(Post $post)
+    {
+        return view('posts.edit', $post)->with(['post' => $post]);
+    }
+    public function update(Post $post, PostRequest $request)
+    {
+        $post->fill($request->all())->save();
+        return redirect()
+            ->route('posts.index');
+    }
 }

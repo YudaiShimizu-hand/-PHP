@@ -17,6 +17,6 @@ Route::get('/', 'App\Http\Controllers\PostController@index')->name('posts.index'
 Route::get('/create', 'App\Http\Controllers\PostController@create')->name('posts.create');
 Route::post('/create', 'App\Http\Controllers\PostController@store')->name('posts.store');
 
-
-
 Route::get('/{post}/show', 'App\Http\Controllers\PostController@show')->name('posts.show');
+Route::get('/{post}/edit', 'App\Http\Controllers\PostController@edit')->name('posts.edit');
+Route::patch('/{post}/edit', 'App\Http\Controllers\PostController@update')->name('posts.update');
