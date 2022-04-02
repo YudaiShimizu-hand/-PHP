@@ -15,6 +15,19 @@
         @csrf
         <button>削除</button>
     </form>
+    <h2>comment</h2>
+
+    <ul>
+        @foreach ($post->comment as $comment)
+            <li>{{$comment->body}}</li>
+        @endforeach
+    </ul>
+
+    <form method="POST" action="{{ route('comments.store', $post)}}">
+        @csrf
+        <input type="text" name="body">
+        <button>コメント</button>
+    </form>
     <script>
         'use strict';
         {

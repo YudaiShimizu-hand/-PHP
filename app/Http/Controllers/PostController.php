@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Comment;
 use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
@@ -13,7 +14,7 @@ class PostController extends Controller
         $posts = Post::all();
         return view('posts.index')->with(['posts' =>$posts]);
     }
-    public function show(Post $post)
+    public function show(Post $post, Comment $comment)
     {
         return view('posts.show', $post)->with(['post' => $post]);
     }
